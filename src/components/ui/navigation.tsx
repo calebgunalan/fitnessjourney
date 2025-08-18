@@ -10,7 +10,9 @@ import {
   User, 
   Menu, 
   X,
-  Play
+  Plus,
+  Target,
+  Settings as SettingsIcon
 } from "lucide-react";
 
 const navigationItems = [
@@ -18,7 +20,8 @@ const navigationItems = [
   { name: "Workouts", href: "/workouts", icon: Dumbbell },
   { name: "Exercises", href: "/exercises", icon: BookOpen },
   { name: "Progress", href: "/progress", icon: BarChart3 },
-  { name: "Profile", href: "/profile", icon: User },
+  { name: "Builder", href: "/workout-builder", icon: Target },
+  { name: "Settings", href: "/settings", icon: SettingsIcon },
 ];
 
 export function Navigation() {
@@ -59,8 +62,8 @@ export function Navigation() {
               );
             })}
             <Button variant="default" className="ml-4">
-              <Play className="w-4 h-4 mr-2" />
-              Start Workout
+              <Plus className="w-4 h-4 mr-2" />
+              Quick Start
             </Button>
           </div>
 
@@ -102,8 +105,8 @@ export function Navigation() {
             })}
             <div className="pt-2">
               <Button variant="default" className="w-full">
-                <Play className="w-4 h-4 mr-2" />
-                Start Workout
+                <Plus className="w-4 h-4 mr-2" />
+                Quick Start
               </Button>
             </div>
           </div>

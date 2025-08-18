@@ -7,6 +7,8 @@ import WorkoutSession from "./pages/WorkoutSession";
 import Exercises from "./pages/Exercises";
 import Progress from "./pages/Progress";
 import Profile from "./pages/Profile";
+import WorkoutBuilder from "./pages/WorkoutBuilder";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -18,6 +20,8 @@ const App = () => (
       <Route path="/exercises" element={<Exercises />} />
       <Route path="/progress" element={<Progress />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/workout-builder" element={<WorkoutBuilder />} />
+      <Route path="/settings" element={<Settings />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Toaster />
