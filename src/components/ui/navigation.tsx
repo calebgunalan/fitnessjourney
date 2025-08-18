@@ -7,12 +7,11 @@ import {
   Dumbbell, 
   BookOpen, 
   BarChart3, 
-  User, 
   Menu, 
   X,
   Plus,
   Target,
-  Settings as SettingsIcon
+  Settings
 } from "lucide-react";
 
 const navigationItems = [
@@ -21,7 +20,7 @@ const navigationItems = [
   { name: "Exercises", href: "/exercises", icon: BookOpen },
   { name: "Progress", href: "/progress", icon: BarChart3 },
   { name: "Builder", href: "/workout-builder", icon: Target },
-  { name: "Settings", href: "/settings", icon: SettingsIcon },
+  { name: "Settings", href: "/settings", icon: Settings },
 ];
 
 export function Navigation() {
