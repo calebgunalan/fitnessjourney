@@ -67,10 +67,20 @@ const Profile = () => {
   };
 
   const updateField = (field: string, value: any, category?: string) => {
-    setUserData(prev => ({
-      ...prev,
-      [category || field]: category ? { ...prev[category as keyof typeof prev], [field]: value } : value
-    }));
+    if (category) {
+      setUserData(prev => ({
+        ...prev,
+        [category]: {
+          ...(prev[category as keyof typeof prev] as Record<string, any>),
+          [field]: value
+        }
+      }));
+    } else {
+      setUserData(prev => ({
+        ...prev,
+        [field]: value
+      }));
+    }
   };
 
   return (
