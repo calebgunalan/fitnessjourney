@@ -11,15 +11,21 @@ import {
   X,
   Plus,
   Target,
-  Settings
+  Settings,
+  Users,
+  Apple,
+  Trophy,
+  Sparkles
 } from "lucide-react";
 
 const navigationItems = [
   { name: "Dashboard", href: "/", icon: Home },
   { name: "Workouts", href: "/workouts", icon: Dumbbell },
-  { name: "Exercises", href: "/exercises", icon: BookOpen },
-  { name: "Progress", href: "/progress", icon: BarChart3 },
-  { name: "Builder", href: "/workout-builder", icon: Target },
+  { name: "AI Generator", href: "/ai-workout", icon: Sparkles },
+  { name: "Nutrition", href: "/nutrition", icon: Apple },
+  { name: "Social", href: "/social", icon: Users },
+  { name: "Analytics", href: "/analytics", icon: BarChart3 },
+  { name: "Achievements", href: "/achievements", icon: Trophy },
   { name: "Settings", href: "/settings", icon: Settings },
 ];
 
