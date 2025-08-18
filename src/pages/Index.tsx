@@ -14,6 +14,7 @@ import {
   Clock,
   Award
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/gym-hero.jpg";
 
 const recentWorkouts = [
@@ -65,13 +66,17 @@ const Index = () => {
                 Track workouts, monitor progress, and achieve your fitness goals with our advanced workout application.
               </p>
               <div className="flex gap-4">
-                <Button size="lg" className="text-lg px-8">
-                  <Zap className="w-5 h-5 mr-2" />
-                  Start Workout
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
-                  View Progress
-                </Button>
+                <Link to="/workouts">
+                  <Button size="lg" className="text-lg px-8">
+                    <Zap className="w-5 h-5 mr-2" />
+                    Start Workout
+                  </Button>
+                </Link>
+                <Link to="/progress">
+                  <Button variant="outline" size="lg" className="text-lg px-8">
+                    View Progress
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -116,11 +121,22 @@ const Index = () => {
           <div className="lg:col-span-2">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-foreground">Recent Workouts</h2>
-              <Button variant="outline">View All</Button>
+              <Link to="/workouts">
+                <Button variant="outline">View All</Button>
+              </Link>
             </div>
             <div className="grid gap-6">
               {recentWorkouts.map((workout, index) => (
-                <WorkoutCard key={index} {...workout} />
+                <Link key={index} to={`/workout/${workout.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <WorkoutCard
+                    title={workout.title}
+                    duration={workout.duration}
+                    difficulty={workout.difficulty}
+                    calories={workout.calories}
+                    exercises={workout.exercises}
+                    category={workout.category}
+                  />
+                </Link>
               ))}
             </div>
           </div>
